@@ -1,0 +1,16 @@
+{
+  "Todos": [
+    {
+      "id": 1,
+      "title": "NgRx Tutorial"
+    },
+    {
+      "id": 2,
+      "title": "Angular Tutorial"
+    },
+    {
+      "id": 3,
+      "title": "RxJs Tutorial"
+    }
+  ]
+}

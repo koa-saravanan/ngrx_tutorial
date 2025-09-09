@@ -1,0 +1,39 @@
+<div class="container">
+    <h2 class="m-4 text-center">NgRx CRUD Operations</h2>
+
+    <table class="table table-dark table-center">
+        <thead class="bg-secondary">
+            <tr>
+                <th class="col-3 p-2">ID</th>
+                <th class="col-3 p-2">Title</th>
+                <th class="col-3 p-2">Update</th>
+                <th class="col-3 p-2">Delete</th>
+            </tr>
+        </thead>
+
+        <tbody>
+            @for(data of crudData$ | async; track data){
+            <tr>
+                <td>{{data.id}}</td>
+                <td>{{data.title}}</td>
+                <td>
+                    <button class="btn btn-sm btn-primary m-1" (click)="updateData(data.id,data)">Update</button>
+                </td>
+                <td>
+                    <button class="btn btn-sm btn-danger m-1" (click)="deleteData(data.id)">Delete</button>
+                </td>
+            </tr>
+            }
+        </tbody>
+    </table>
+
+    <br>
+
+    <div>
+        <button class="btn btn-success btn-sm m-1" (click)="createData()">Create</button>
+        @if(isCreate){
+        <input type="text" class="mt-3" [(ngModel)]="newData" placeholder="Add new title" name="newData">
+        <button class="btn btn-sm btn-warning m-1" (click)="addData(newData)">Add</button>
+        }
+    </div>
+</div>

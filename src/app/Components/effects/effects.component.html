@@ -1,0 +1,9 @@
+<ul>
+    @for(data of todosData$ | async; track $index){
+        <li>
+            <b>Id</b> : {{data.id}} 
+            <b>Title</b> : {{data.title}} 
+            <b>Completed</b> : {{data.completed}} 
+        </li>
+    }
+</ul>
